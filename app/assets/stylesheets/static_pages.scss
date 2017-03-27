@@ -1,3 +1,73 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Coolors Exported Palette - coolors.co/8b7e7c-76859c-fcfcfd-02020a-e1b1e7 */
+
+/* HSL */
+$color1: hsla(8%, 6%, 52%, 1);
+$color2: hsla(216%, 16%, 54%, 1);
+$color3: hsla(240%, 20%, 99%, 1);
+$color4: hsla(240%, 67%, 2%, 1);
+$color5: hsla(293%, 53%, 80%, 1);
+
+/* RGB */
+$color1: rgba(139, 126, 124, 1);
+$color2: rgba(118, 133, 156, 1);
+$color3: rgba(252, 252, 253, 1);
+$color4: rgba(2, 2, 10, 1);
+$color5: rgba(225, 177, 231, 1);
+
+body {
+  background-color: $color3;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background-color: $color1;
+}
+
+.navbar-default .navbar-nav>li>a {
+    text-decoration: none;
+    color: $color3;
+  }
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: $color3;
+}
+
+/* STANDARD TYPOGRAPHY */
+
+h1 {
+  text-align:center;
+  color: $color2;
+  font-family: Roboto, Arial, sarif;
+  padding-top: 50px;
+  font-size: 60px;
+}
+
+p {
+  padding-left:1em;
+  color: $color4;
+  font-size: 40px;
+  text-align: center;
+}
+
+.my-image {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* FOOTER */
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: $color1;
+  color: $color3;
+  text-align: center;
+}

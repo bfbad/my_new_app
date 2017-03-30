@@ -1,3 +1,22 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* HSL */
+$color1: hsla(8%, 6%, 52%, 1);
+$color2: hsla(216%, 16%, 54%, 1);
+$color3: hsla(240%, 20%, 99%, 1);
+$color4: hsla(240%, 67%, 2%, 1);
+$color5: hsla(293%, 53%, 80%, 1);
+
+/* RGB */
+$color1: rgba(139, 126, 124, 1);
+$color2: rgba(118, 133, 156, 1);
+$color3: rgba(252, 252, 253, 1);
+$color4: rgba(2, 2, 10, 1);
+$color5: rgba(225, 177, 231, 1);
+
+.product_table {
+  border: 5px solid $color2;
+  margin: 0 auto;
+}

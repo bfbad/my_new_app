@@ -16,7 +16,27 @@ $color3: rgba(252, 252, 253, 1);
 $color4: rgba(2, 2, 10, 1);
 $color5: rgba(225, 177, 231, 1);
 
-.product_table {
-  border: 5px solid $color2;
+.header {
+  p {
+    font-size: 14px;
+  }
+}
+
+.panel {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: 2px solid $color2;
+    outline-offset: -10px;
+}
+
+.product-list {
+  h1 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 10px;
+  }
   margin: 0 auto;
 }

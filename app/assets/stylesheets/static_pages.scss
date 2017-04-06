@@ -53,6 +53,23 @@ p {
   text-align: center;
 }
 
+.carousel-caption, {
+  color: black;
+  padding-bottom: 1.5em;
+}
+
+.carousel-indicators {
+  z-index: 1;
+}
+
+.carousel-indicators li {
+  background-color: $color4;
+}
+
+.carousel-indicators .active {
+  background-color: $color1;
+}
+
 .my-image {
   width: 80%;
   margin: 0 auto;
@@ -65,8 +82,9 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1em;
   background-color: $color1;
   color: $color3;
   text-align: center;
+  z-index: 3
 }

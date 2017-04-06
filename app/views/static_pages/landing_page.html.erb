@@ -8,13 +8,9 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <% @products.each do |product| %>
-      <div class="item <%= " active" if product == @products.first %>">
-        <%= image_tag(product.image_url) %>
-        <div class="carousel-caption">
-          <%= product.name %>
-        </div>
-      </div>
+    <% @products.each do |p| %>
+      <% active = true if p == @products.first %>
+      <%= render partial: 'product', locals: { product: p, active: active } %>
     <% end %>
   </div>
 

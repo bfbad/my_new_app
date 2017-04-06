@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MyNewApp</title>
-    <%= csrf_meta_tags %>
-    <!-- Link Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
 
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><%= link_to("Home", static_pages_index_path) %></li>
-            <li><%= link_to("Products", products_path) %></li>
-            <li><%= link_to("Contact", static_pages_contact_path) %></li>
-            <li><%= link_to("About", static_pages_about_path) %></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+<head>
+  <title>Brandon's Bikes</title>
+  <%= csrf_meta_tags %>
 
-    <%= yield %>
+  <!-- Link Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-    <footer>
-      &copy; <%= Time.new.year %> Brandon's Bike Shop
-    </footer>
-  </body>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to("Home", static_pages_index_path) %></li>
+          <li><%= link_to("Products", products_path) %></li>
+          <li><%= link_to("Contact", static_pages_contact_path) %></li>
+          <li><%= link_to("About", static_pages_about_path) %></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <%= yield %>
+
+  <footer>
+    &copy; <%= Time.new.year %> Brandon's Bike Shop
+  </footer>
+</body>
+
 </html>

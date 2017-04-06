@@ -23,11 +23,11 @@ $color5: rgba(225, 177, 231, 1);
 }
 
 .panel {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    outline: 2px solid $color2;
-    outline-offset: -10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: 2px solid $color2;
+  outline-offset: -10px;
 }
 
 .product-list {

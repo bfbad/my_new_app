@@ -27,10 +27,13 @@ $color5: rgba(225, 177, 231, 1);
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   outline: 2px solid $color2;
-  outline-offset: -10px;
+  outline-offset: -8px;
 }
 
 .product-list {
+  
+  margin: 0 auto;
+
   h1 {
     font-size: 14px;
   }
@@ -38,5 +41,4 @@ $color5: rgba(225, 177, 231, 1);
   p {
     font-size: 10px;
   }
-  margin: 0 auto;
 }

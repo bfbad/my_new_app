@@ -53,13 +53,25 @@ p {
   text-align: center;
 }
 
+/* CAROUSEL STYLES */
+
+.carousel-inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none
+}
+
 .carousel-caption, {
-  color: black;
-  padding-bottom: 1.5em;
+  color: $color3;
+  padding-bottom: 4%;
 }
 
 .carousel-indicators {
   z-index: 1;
+  padding-bottom: 2%
 }
 
 .carousel-indicators li {
@@ -71,7 +83,6 @@ p {
 }
 
 .my-image {
-  width: 80%;
   margin: 0 auto;
 }
 

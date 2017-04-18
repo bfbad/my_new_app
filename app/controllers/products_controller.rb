@@ -4,7 +4,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:q]
+      search_term = params[:q]
+      #return filtered list
+      @products = Product.search(search_term, Rails.env.production?)
+    else
+      @products = Product.all
+    end 
   end
 
   # GET /products/1

@@ -70,7 +70,11 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.find_by(id: params[:id])
+
+      if @product.nil?
+        redirect_to products_path, notice: "No products exist with that ID"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

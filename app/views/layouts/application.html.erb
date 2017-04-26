@@ -31,18 +31,38 @@
           <li><%= link_to("Products", products_path) %></li>
           <li><%= link_to("Contact", static_pages_contact_path) %></li>
           <li><%= link_to("About", static_pages_about_path) %></li>
+          <li><!-- Search Form -->
+            <%= form_tag("/products", method: "get", class: "form-inline navbar-form", role: "search") do %>
+              <div class="form-group">
+                <%= label_tag(:q, "Find a bike:", class: "sr-only") %>
+                <%= text_field_tag(:q, nil, class: "form-control search-box") %>
+              </div>
+              <%= submit_tag("Search", class: "btn btn-default") %>
+            <% end %>
+          </li>
         </ul>
-        <!-- Search Form -->
-        <%= form_tag("/products", method: "get", class: "navbar-form navbar-right", role: "search") do %>
-          <div class="form-group">
-            <%= label_tag(:q, "Find a bike:", class: "search-label") %>
-            <%= text_field_tag(:q, nil, class: "form-control") %>
-          </div>
-          <%= submit_tag("Search", class: "btn btn-default") %>
-        <% end %>
+        
+        <!-- User Auth Features -->
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "nav-link") %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+            <% end %>
+          </li>
+        </ul>
+        
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
+  <% unless notice.nil? %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  <% unless alert.nil? %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
 
   <%= yield %>
 

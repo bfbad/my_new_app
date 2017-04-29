@@ -12,6 +12,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= favicon_link_tag %>
 </head>
 
 <body>
@@ -57,11 +58,11 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <% unless notice.nil? %>
-    <p class="notice"><%= notice %></p>
+  <% if notice %>
+    <p class="notice alert alert-warning", role="alert"><%= notice %></p>
   <% end %>
-  <% unless alert.nil? %>
-    <p class="alert"><%= alert %></p>
+  <% if alert %>
+    <p class="alert alert-danger", role="alert"><%= alert %></p>
   <% end %>
 
   <%= yield %>

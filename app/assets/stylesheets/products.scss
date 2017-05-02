@@ -32,6 +32,7 @@ body {
   -webkit-box-sizing: border-box;
   outline: 2px solid $color2;
   outline-offset: -8px;
+  min-height: 576px;
 }
 
 .product-list {

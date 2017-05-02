@@ -42,5 +42,7 @@ $color5: rgba(225, 177, 231, 1);
   margin: 0 auto;
 }
 
-
+a:hover {
+  background-color: none;
+}
 

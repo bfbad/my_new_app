@@ -1,10 +1,9 @@
 <!-- This partial displays the panels on the product page -->
-
-<div class="col-sm-6 panel">
-  <h1><%= product.name %></h1>
+<div class="col-lg-4 panel">
+  <h1><%= link_to product.name, product %></h1>
   <p><%= product.colour %></p>
   <%= image_tag(product.image_url, class: "img-responsive") %>
   <p><%= product.description %></p>
   <p><strong>$ <%= product.price %></strong></p>
-  <p><%= link_to "Edit", edit_product_path(product.id) %> | <%= link_to "Show", product %></p>
+  <p><%= link_to "Edit", edit_product_path(product.id) %></p>
 </div> <!-- /col -->

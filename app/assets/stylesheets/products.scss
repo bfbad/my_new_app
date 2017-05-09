@@ -74,18 +74,20 @@ body {
 }
 
 .comments-area {
+  
   h3 {
     color: $color2;
   }
+  margin-bottom: 6em;
+  text-align: left;
+}
 
-  .comments {
-    height: 200px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    outline: 2px solid $color2;
-    outline-offset: -8px;
-    margin-bottom: 6em;
+.comments {
+  display: inline-block;
+
+  p {
+    text-align: left;
+    font-size: 13px;
   }
 }
 

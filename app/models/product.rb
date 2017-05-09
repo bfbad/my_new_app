@@ -30,5 +30,9 @@ class Product < ApplicationRecord
     comments.one_star_comments
   end
 
+  def average_rating
+    comments.average(:rating).to_f
+  end
+
 end
 

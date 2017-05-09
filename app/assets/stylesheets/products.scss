@@ -32,7 +32,7 @@ body {
   -webkit-box-sizing: border-box;
   outline: 2px solid $color2;
   outline-offset: -8px;
-  min-height: 576px;
+  min-height: 525px;
 }
 
 .product-list {
@@ -52,5 +52,40 @@ body {
   display: block;
   max-height: 400px;
   margin: 0 auto;
+}
+
+.details {
+
+  h3 {
+    text-align: left;
+    color: $color2;
+  }
+
+  p {
+    text-align: left;
+    font-size: 13px;
+  }
+
+}
+
+.product-area {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.comments-area {
+  h3 {
+    color: $color2;
+  }
+
+  .comments {
+    height: 200px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: 2px solid $color2;
+    outline-offset: -8px;
+    margin-bottom: 6em;
+  }
 }
 

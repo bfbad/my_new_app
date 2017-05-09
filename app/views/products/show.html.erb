@@ -1,21 +1,38 @@
-<div class="product_area">
-  <div class="image">
-    <%= image_tag(@product.image_url, class: "small") %>
-  </div> <!-- /image -->
-  <p>
-    <%= @product.name %>
-  </p>
+<div class="product-area container">
+  
+  <div class="row">
+    <div class="image col-md-8">
+      <%= image_tag(@product.image_url, class: "small img-responsive") %>
+    </div> <!-- /image -->
+    <div class="details col-md-4">
+      <h3>
+        <%= @product.name %>
+      </h3>
 
-  <p>
-    <%= @product.description %>
-  </p>
+      <p>
+        <strong>$<%= @product.price %></strong>
+      </p>
 
-  <p>
-    <%= @product.colour %>
-  </p>
-
-  <p>
-    $<%= @product.price %>
+      <p>
+        <strong>Available in:</strong> <em><%= @product.colour %></em>
+      </p>
+      
+      <h3>
+        Description:
+      </h3>
+      
+      <p>
+        <%= @product.description %>
+      </p>
+      <%= link_to :back, class: "btn btn-default" do %>
+        <span class="glyphicon glyphicon-arrow-left"></span> Back
+      <% end %>
+    </div> <!-- /details -->
+  </div> <!-- /row -->
 </div> <!-- /product_area -->
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', :back %>
+<div class = "comments-area container">
+  <h3> Comments </h3>
+  <div class = "comments">
+  </div> <!-- /comments -->
+</div> <!-- /comments-area -->
+<!-- <%#= link_to 'Edit', edit_product_path(@product) %> | -->

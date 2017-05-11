@@ -9,7 +9,7 @@ class Ability
     if user.admin?
       can :manage, :Comment
     else 
-      can [:read, :create], :Comment
+      can :read, :Comment
   end
 
 end

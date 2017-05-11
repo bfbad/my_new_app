@@ -10,6 +10,7 @@ class Ability
       can :manage, :Comment
     else 
       can :read, :Comment
+    end
   end
 
 end

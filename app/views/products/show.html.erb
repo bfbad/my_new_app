@@ -40,7 +40,9 @@
   <div class = "comments">
     <%= render 'new_comment', product: @product %>
     <%= render 'comments', product: @product %>
-    <%= will_paginate @comments %>
+    <div class="digg_pagination">
+      <%= will_paginate @comments %>
+    </div>
   </div> <!-- /comments -->
 </div> <!-- /comments-area -->
 <!-- <%#= link_to 'Edit', edit_product_path(@product) %> | -->

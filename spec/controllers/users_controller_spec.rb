@@ -4,8 +4,8 @@ describe UsersController, type: :controller do
   let(:user) { User.create!(email: "b@c.com", password: "123456", confirmed_at: Time.now) }
   let(:user2) { User.create!(email: "a@d.com", password: "123456", confirmed_at: Time.now)}
   describe 'GET #show' do
+    
     context 'User is logged in' do
-      
       before do 
         sign_in user
       end

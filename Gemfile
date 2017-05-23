@@ -40,11 +40,13 @@ gem 'jbuilder', '~> 2.5'
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.1'
 
+# Rails controlling testing gem for functional tests.
+gem 'rails-controller-testing'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
-  
 end
 
 group :development do

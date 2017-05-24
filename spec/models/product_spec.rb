@@ -4,6 +4,7 @@ describe Product do
   context "when the product has comments" do
     before do
       @product = Product.create!(name: "race bike")
+      # confirmed_at required to make devise confirmation email work.
       @user = User.create!(email: "b@c.com", password: "123456", confirmed_at: Time.now)
       @product.comments.create!(rating: 1, user: @user, body: "awful bike")
       @product.comments.create!(rating: 3, user: @user, body: "okay bike")

@@ -32,7 +32,7 @@ body {
   -webkit-box-sizing: border-box;
   outline: 2px solid $color2;
   outline-offset: -8px;
-  min-height: 576px;
+  min-height: 525px;
 }
 
 .product-list {
@@ -54,3 +54,91 @@ body {
   margin: 0 auto;
 }
 
+.details {
+
+  h3 {
+    text-align: left;
+    color: $color2;
+  }
+
+  p {
+    text-align: left;
+    font-size: 13px;
+  }
+
+}
+
+.product-area {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.comments-area {
+  
+  h3 {
+    color: $color2;
+  }
+  margin-bottom: 6em;
+  text-align: left;
+}
+
+.comments {
+  display: inline-block;
+
+  p {
+    text-align: left;
+    font-size: 13px;
+  }
+}
+
+.rated, .rating {
+  margin-left: 33px;
+}
+
+/* DIGG STYLE PAGINATION */
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: $color1;
+    color: white;
+    border: 1px solid $color1; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: $color2;
+    border: 1px solid $color2; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: $color2;
+      border-color: $color4; }
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: $color2;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }

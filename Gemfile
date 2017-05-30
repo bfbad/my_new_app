@@ -69,5 +69,7 @@ end
  # For user authentication
 gem 'devise'
 
+gem 'simplecov', :require => false, :group => :test
+
  # For user authorization
 gem 'cancancan', '~> 1.10'

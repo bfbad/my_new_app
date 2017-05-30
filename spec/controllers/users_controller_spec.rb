@@ -34,4 +34,17 @@ describe UsersController, type: :controller do
       end
     end
   end
+
+  describe 'GET #index' do
+    it "renders the index template" do
+      get :index
+      expect(response).to render_template("index")
+    end
+
+    it "assigns @user" do
+      user3 = FactoryGirl.create(:user)
+      get :index
+      expect(assigns(:users)).to eq([user, user2, user3])
+    end
+  end
 end

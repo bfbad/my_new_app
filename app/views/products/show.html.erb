@@ -8,8 +8,11 @@
       <h3>
         <%= @product.name %>
       </h3>
-      <%= form_tag "/payments/create" do %>
-        <%= render partial: "shared/stripe_checkout_button" %>
+      <% if signed_in? %>
+        <%= form_tag "/payments/create" do %>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
       <% end %>
       <p>
         <strong>Average Rating: </strong>

@@ -1,6 +1,7 @@
 <!-- This partial displays the panels on the product page -->
 <div class="col-md-4 col-sm-6 panel">
   <h1><%= link_to product.name, product %></h1>
+  <% logger.debug "Product: #{product.name}" %>
   <p><%= product.colour %></p>
   <%= link_to image_tag(product.image_url, class: 'img-responsive'), product %>
   <p><%= product.description %></p>

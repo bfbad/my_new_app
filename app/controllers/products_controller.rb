@@ -4,11 +4,18 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    if !Rails.env.production?
+      byebug
+    end
     if params[:q]
+      logger.debug "Page accessed via search"
       search_term = params[:q]
+      logger.debug "Search term is #{search_term}"
       #return filtered list
       @products = Product.search(search_term, Rails.env.production?)
+      logger.debug "Products returned: #{@products}"
     else
+      logger.debug "Page accessed directly"
       @products = Product.all
     end 
   end

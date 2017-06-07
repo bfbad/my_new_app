@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Thank you for your purchase<h1>
+  <p>
+    Your <%= @product.name %> should arrive shortly. If there are any issues, please contact us immediately.
+  </p>
+  <%= image_tag(@product.image_url, class: "small img-responsive") %>
+  <%= link_to products_path, class: "btn btn-default" do %>
+        Buy another bike
+      <% end %>
+</div>

@@ -8,12 +8,6 @@
       <h3>
         <%= @product.name %>
       </h3>
-      <% if signed_in? %>
-        <%= form_tag "/payments/create" do %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-        <% end %>
-      <% end %>
       <p>
         <strong>Average Rating: </strong>
         <div class = "rated" data-score = "<%= @product.average_rating %>"></div>
@@ -35,6 +29,12 @@
       <p>
         <%= @product.description %>
       </p>
+      <% if signed_in? %>
+        <%= form_tag "/payments/create", class: "payment-form" do %>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
+      <% end %>
       <%= link_to products_path, class: "btn btn-default" do %>
         <span class="glyphicon glyphicon-arrow-left"></span> Back
       <% end %>

@@ -41,15 +41,15 @@
       </div> <!-- /details -->
     </div> <!-- /row -->
   </div> <!-- /product_area -->
-  <div class = "comments-area container">
-    <h3> Comments </h3>
-    <div class = "comments">
-      <%= render 'new_comment', product: @product %>
-      <%= render 'comments', product: @product %>
-      <div class="digg_pagination">
-        <%= will_paginate @comments %>
-      </div>
-    </div> <!-- /comments -->
-  </div> <!-- /comments-area -->
-  <!-- <%#= link_to 'Edit', edit_product_path(@product) %> | -->
 <% end %>
+<div class = "comments-area container">
+  <h3> Comments </h3>
+  <div class = "comments">
+    <%= render 'new_comment', product: @product %>
+    <%= render 'comments', product: @product %>
+    <div class="digg_pagination">
+      <%= will_paginate @comments %>
+    </div>
+  </div> <!-- /comments -->
+</div> <!-- /comments-area -->
+<!-- <%#= link_to 'Edit', edit_product_path(@product) %> | -->

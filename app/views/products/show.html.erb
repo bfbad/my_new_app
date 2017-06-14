@@ -29,12 +29,6 @@
         <p>
           <%= @product.description %>
         </p>
-        <% if signed_in? %>
-          <%= form_tag "/payments/create", class: "payment-form" do %>
-            <%= hidden_field_tag(:product_id, @product.id) %>
-            <%= render partial: "shared/stripe_checkout_button" %>
-          <% end %>
-        <% end %>
         <%= link_to products_path, class: "btn btn-default" do %>
           <span class="glyphicon glyphicon-arrow-left"></span> Back
         <% end %>
@@ -42,6 +36,14 @@
     </div> <!-- /row -->
   </div> <!-- /product_area -->
 <% end %>
+<div class = "container">
+  <% if signed_in? %>
+    <%= form_tag "/payments/create", class: "payment-form" do %>
+      <%= hidden_field_tag(:product_id, @product.id) %>
+      <%= render partial: "shared/stripe_checkout_button" %>
+    <% end %>
+  <% end %>
+</div>
 <div class = "comments-area container">
   <h3> Comments </h3>
   <div class = "comments">

@@ -43,6 +43,9 @@
       <%= render partial: "shared/stripe_checkout_button" %>
     <% end %>
   <% end %>
+  <h6>
+    Views: <span class="badge"> <%= @product.views %></span>
+  </h6>
 </div>
 <div class = "comments-area container">
   <h3> Comments </h3>

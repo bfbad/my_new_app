@@ -76,4 +76,5 @@ gem 'simplecov', :require => false, :group => :test
  # For user authorization
 gem 'cancancan', '~> 1.10'
 gem 'dalli'
+gem 'redis-rails'
 

@@ -6,6 +6,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     respond_to do |format|
       if @comment.save
+        if @comment.rating == 5
+          @comment.set_as_latest_five_star_comment(@product, @comment.user)
+        end
         format.html { redirect_to @product, notice: 'Review was created successfully.'}
         format.json { render :show, status: :created, location: @product}
         format.js

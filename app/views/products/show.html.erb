@@ -1,46 +1,52 @@
-<div class="product-area container">
-  
-  <div class="row">
-    <div class="image col-md-8">
-      <%= image_tag(@product.image_url, class: "small img-responsive") %>
-    </div> <!-- /image -->
-    <div class="details col-md-4">
-      <h3>
-        <%= @product.name %>
-      </h3>
-      <p>
-        <strong>Average Rating: </strong>
-        <div class = "rated" data-score = "<%= @product.average_rating %>"></div>
-      </p>
+<% cache @product do %>
+  <div class="product-area container">
+    <div class="row">
+      <div class="image col-md-8">
+        <%= image_tag(@product.image_url, class: "small img-responsive img-zoom", data_zoom_image: @product.image_url) %>
+      </div> <!-- /image -->
+      <div class="details col-md-4">
+        <h3>
+          <%= @product.name %>
+        </h3>
+        <p>
+          <strong>Average Rating: </strong>
+          <div class = "rated" data-score = "<%= @product.average_rating %>" id="average-rating"></div>
+        </p>
 
 
-      <p>
-        <strong>$<%= @product.price %></strong>
-      </p>
+        <p>
+          <strong>$<%= @product.price %></strong>
+        </p>
 
-      <p>
-        <strong>Available in:</strong> <em><%= @product.colour %></em>
-      </p>
-      
-      <h3>
-        Description:
-      </h3>
-      
-      <p>
-        <%= @product.description %>
-      </p>
-      <% if signed_in? %>
-        <%= form_tag "/payments/create", class: "payment-form" do %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
-          <%= render partial: "shared/stripe_checkout_button" %>
+        <p>
+          <strong>Available in:</strong> <em><%= @product.colour %></em>
+        </p>
+        
+        <h3>
+          Description:
+        </h3>
+        
+        <p>
+          <%= @product.description %>
+        </p>
+        <%= link_to products_path, class: "btn btn-default" do %>
+          <span class="glyphicon glyphicon-arrow-left"></span> Back
         <% end %>
-      <% end %>
-      <%= link_to products_path, class: "btn btn-default" do %>
-        <span class="glyphicon glyphicon-arrow-left"></span> Back
-      <% end %>
-    </div> <!-- /details -->
-  </div> <!-- /row -->
-</div> <!-- /product_area -->
+      </div> <!-- /details -->
+    </div> <!-- /row -->
+  </div> <!-- /product_area -->
+<% end %>
+<div class = "container">
+  <% if signed_in? %>
+    <%= form_tag "/payments/create", class: "payment-form" do %>
+      <%= hidden_field_tag(:product_id, @product.id) %>
+      <%= render partial: "shared/stripe_checkout_button" %>
+    <% end %>
+  <% end %>
+  <h6>
+    Views: <span class="badge"> <%= @product.views %></span>
+  </h6>
+</div>
 <div class = "comments-area container">
   <h3> Comments </h3>
   <div class = "comments">

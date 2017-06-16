@@ -17,4 +17,11 @@ class Comment < ApplicationRecord
     5
   end
 
+  def set_as_latest_five_star_comment(product, user)
+    $redis.hset("latest_five_star_comment", "product", product.name)
+    $redis.hset("latest_five_star_comment", "name", user.first_name)
+    $redis.hset("latest_five_star_comment", "comment", body)
+  end
+
+
 end

@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
         if @comment.rating == 5
           @comment.set_as_latest_five_star_comment(@product, @comment.user)
         end
-        ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
+        ProductChannel.broadcast_to @product.id, comment: @comment, average_rating: @product.average_rating
         format.html { redirect_to @product, notice: 'Review was created successfully.'}
         format.json { render :show, status: :created, location: @product}
         format.js

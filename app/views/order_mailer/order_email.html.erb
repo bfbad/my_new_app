@@ -1,0 +1,17 @@
+<table>
+  <tbody>
+    <tr>
+      <td><p>Hi <%= @user.first_name %>!</p></td>
+    </tr>
+    <tr>
+      <td><p>Your bike is on the way!</p>
+          <p><b>Product Name: </b><%= @product.name %></p>
+          <p><b>Price: </b><%= @product.price %></p>
+          <p><%= image_tag(@product.image_url, style: 'width:20%;') %></p>
+        </td>
+    </tr>
+    <tr>
+
+    </tr>
+  </tbody>
+</table>

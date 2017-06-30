@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
   # let(:user) { User.create!(email: "b@c.com", password: "123456", confirmed_at: Time.now) }
-  user = FactoryGirl.create(:user)
+  let(:user) { FactoryGirl.create(:user) }
   #let(:user2) { User.create(email: "test@tester123.com", password: "123456", confirmed_at: Time.now)}
-  user2 = FactoryGirl.create(:user)
+  let(:user2) { FactoryGirl.create(:user) }
   describe 'GET #show' do
     context 'User is logged in' do
       before do 
@@ -37,7 +37,7 @@ describe UsersController, type: :controller do
     it "assigns @user" do
       user3 = FactoryGirl.create(:user)
       get :index
-      expect(assigns(:users)).to eq([user, user2, user3])
+      expect(assigns(:users)).to eq(User.all)
     end
   end
 end

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe ProductsController, type: :controller do
+  render_views
   context 'GET #index' do
     before do
       get :index
@@ -13,12 +14,14 @@ describe ProductsController, type: :controller do
   end
   context 'GET #index with params' do
     before do
+      @product = FactoryGirl.create(:product, name: "freckle")
       get :index, params: {q: "freckle"}
     end
     it 'returns the search results' do
       expect(response).to be_success
       expect(response).to have_http_status(200)
       expect(assigns(:products)).to eq(Product.search("freckle", false))
+      expect(response.body).to include("freckle")
     end
   end
   context 'GET #show' do
@@ -36,7 +39,7 @@ describe ProductsController, type: :controller do
     end
   end
   context 'POST #create' do
-    before do 
+    before do
       post :create, params: {product: {name: 'My Product'}}
     end
     it 'creates the product' do
@@ -70,7 +73,7 @@ describe ProductsController, type: :controller do
     end
   end
   context 'PATCH #update' do
-    before do 
+    before do
       @product = FactoryGirl.create(:product)
       patch :update, params:{id: @product.id, product: {name: "dog"}}
       @product.reload
@@ -83,7 +86,7 @@ describe ProductsController, type: :controller do
     end
   end
   context 'PATCH #update with no name' do
-    before do 
+    before do
       @product = FactoryGirl.create(:product)
       @old_name = @product.name
       patch :update, params:{id: @product.id, product: {name: nil}}
@@ -93,7 +96,7 @@ describe ProductsController, type: :controller do
       expect(@product.name).to eq @old_name
     end
     context 'DELETE #destroy' do
-      before :each do 
+      before :each do
         @product = FactoryGirl.create(:product)
       end
       it 'deletes the product' do

@@ -22,7 +22,7 @@ Features:
 + Contact form
 + Administrative tools to delete inappropriate comments.
 
-##Installation##
+## Installation ##
 + Clone repository
 + Run `bundle install`
 + Install and run a redis server - [Download here](https://redis.io/download)

@@ -1,4 +1,4 @@
-# Brandon's Bike Shop 
+# Brandon's Bike Shop
 ## A demo e-commerce web application created with Ruby on Rails
 
 Hosted on [heroku](https://brandonsbikes.herokuapp.com)
@@ -21,3 +21,8 @@ Features:
 + Search
 + Contact form
 + Administrative tools to delete inappropriate comments.
+
+##Installation##
++ Clone repository
++ Run `bundle install`
++ Install and run a redis server - [Download here](https://redis.io/download)

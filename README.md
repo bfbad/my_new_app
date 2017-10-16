@@ -25,4 +25,5 @@ Features:
 ## Installation ##
 + Clone repository
 + Run `bundle install`
++ Run `rails db:migrate`
 + Install and run a redis server - [Download here](https://redis.io/download)
